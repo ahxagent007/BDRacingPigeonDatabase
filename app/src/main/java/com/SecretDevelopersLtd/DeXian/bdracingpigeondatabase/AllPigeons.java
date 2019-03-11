@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.android.volley.Request;
@@ -48,6 +49,10 @@ public class AllPigeons extends AppCompatActivity {
     private List<Pigeon> PigeonList;
 
 
+    private ProgressBar PB_loading;
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -69,6 +74,8 @@ public class AllPigeons extends AppCompatActivity {
         RV_recyclerView = findViewById(R.id.RV_recyclerView);
         ET_searchText = findViewById(R.id.ET_searchText);
 
+        PB_loading = findViewById(R.id.PB_loading);
+        PB_loading.setVisibility(View.INVISIBLE);
         // use this setting to improve performance if you know that changes
         // in content do not change the layout size of the RecyclerView
         RV_recyclerView.setHasFixedSize(true);
@@ -87,20 +94,32 @@ public class AllPigeons extends AppCompatActivity {
         btn_allPigeonAP.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                RV_recyclerView.setVisibility(View.INVISIBLE);
                 readAll();
+
+                PB_loading.setVisibility(View.VISIBLE);
+
             }
         });
         btn_topPigeonsAP.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                RV_recyclerView.setVisibility(View.INVISIBLE);
                 readOnlyFirst();
+
+                PB_loading.setVisibility(View.VISIBLE);
             }
         });
         btn_searchAP.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 String seatchTxt = ET_searchText.getText().toString();
+                RV_recyclerView.setVisibility(View.INVISIBLE);
+
                 searchPigeon(seatchTxt);
+
+                PB_loading.setVisibility(View.VISIBLE);
             }
         });
 
@@ -110,6 +129,7 @@ public class AllPigeons extends AppCompatActivity {
         // specify an adapter (see also next example)
         mAdapter = new MyRVAdapter(getApplicationContext(),PigeonList);
         RV_recyclerView.setAdapter(mAdapter);
+        RV_recyclerView.setVisibility(View.VISIBLE);
 
     }
 
@@ -224,6 +244,7 @@ public class AllPigeons extends AppCompatActivity {
 
 
     private void readAll(){
+
         String readURL = "http://"+IP+"/BdRacingPIgeonDatabase/Pigeons/read.php";
 
         RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
@@ -251,6 +272,8 @@ public class AllPigeons extends AppCompatActivity {
 
                         PigeonList = pp;
                         setAdapter();
+
+                        PB_loading.setVisibility(View.INVISIBLE);
 
                         Log.i(TAG,"pp size : "+pp.size());
                         Log.i(TAG,"pp 0 name = "+pp.get(0).getPigeonRingNumber());
@@ -297,6 +320,8 @@ public class AllPigeons extends AppCompatActivity {
 
                         PigeonList = pp;
                         setAdapter();
+
+                        PB_loading.setVisibility(View.INVISIBLE);
 
                         Log.i(TAG,"pp size : "+pp.size());
                         Log.i(TAG,"pp 0 name = "+pp.get(0).getPigeonRingNumber());
@@ -345,6 +370,7 @@ public class AllPigeons extends AppCompatActivity {
 
                         PigeonList = pp;
                         setAdapter();
+                        PB_loading.setVisibility(View.INVISIBLE);
 
                         Log.i(TAG,"pp size : "+pp.size());
                         Log.i(TAG,"pp 0 name = "+pp.get(0).getPigeonRingNumber());

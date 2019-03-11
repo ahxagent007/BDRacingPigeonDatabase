@@ -1,81 +1,102 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".AllPigeons"
-    android:orientation="vertical"
-    android:weightSum="20"
     >
 
-<android.support.v7.widget.RecyclerView
-    android:layout_width="match_parent"
-    android:layout_height="0dp"
-    android:layout_weight="16"
-    android:id="@+id/RV_recyclerView"></android.support.v7.widget.RecyclerView>
+
+    <ProgressBar
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:id="@+id/PB_loading"
+        android:layout_centerInParent="true"
+        />
 
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="4"
-        android:weightSum="2"
-        android:orientation="vertical">
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:weightSum="20"
+        >
+        <android.support.v7.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="16"
+            android:id="@+id/RV_recyclerView"></android.support.v7.widget.RecyclerView>
+
+
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1"
-            android:weightSum="3">
+            android:layout_weight="4"
+            android:weightSum="2"
+            android:orientation="vertical">
 
-            <Button
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
                 android:layout_weight="1"
-                android:text="All Pigeon"
-                android:id="@+id/btn_allPigeonAP"/>
+                android:weightSum="3">
 
-            <Button
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:text="Only 1st"
-                android:id="@+id/btn_topPigeonsAP"/>
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="All Pigeon"
+                    android:id="@+id/btn_allPigeonAP"/>
 
-            <Button
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="Only 1st"
+                    android:id="@+id/btn_topPigeonsAP"/>
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="NULL"
+                    android:id="@+id/btn_nullAP"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
                 android:layout_weight="1"
-                android:text="NULL"
-                android:id="@+id/btn_nullAP"/>
+                android:weightSum="10">
+
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="8"
+                    android:id="@+id/ET_searchText"/>
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:text="Search"
+                    android:textStyle="bold"
+                    android:textSize="12dp"
+                    android:id="@+id/btn_searchAP"/>
+
+            </LinearLayout>
 
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:weightSum="10">
-
-            <EditText
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="8"
-                android:id="@+id/ET_searchText"/>
-
-            <Button
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="2"
-                android:text="Search"
-                android:textStyle="bold"
-                android:textSize="12dp"
-                android:id="@+id/btn_searchAP"/>
-
-        </LinearLayout>
 
     </LinearLayout>
 
 
-</LinearLayout>
+
+
+
+</RelativeLayout>
