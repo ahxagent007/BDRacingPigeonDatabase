@@ -10,6 +10,7 @@ public class Pigeon {
     private float PigeonVelocity;
     private int TotalPigeons;
     private String RaceDate;
+    private float Distance;
 
     public Pigeon(){}
 
@@ -19,6 +20,14 @@ public class Pigeon {
 
     public void setPigeonRingNumber(String pigeonRingNumber) {
         PigeonRingNumber = pigeonRingNumber;
+    }
+
+    public float getDistance() {
+        return Distance;
+    }
+
+    public void setDistance(float distance) {
+        Distance = distance;
     }
 
     public int getPosition() {

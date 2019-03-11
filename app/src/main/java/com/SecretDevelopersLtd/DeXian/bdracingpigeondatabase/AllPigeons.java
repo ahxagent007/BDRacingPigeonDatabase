@@ -54,7 +54,7 @@ public class AllPigeons extends AppCompatActivity {
         setContentView(R.layout.activity_all_pigeons);
 
         initial();
-
+        onClickListener();
 
 
 
@@ -78,6 +78,31 @@ public class AllPigeons extends AppCompatActivity {
         RV_recyclerView.setLayoutManager(layoutManager);
 
 
+
+    }
+
+
+    private void onClickListener(){
+
+        btn_allPigeonAP.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                readAll();
+            }
+        });
+        btn_topPigeonsAP.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                readOnlyFirst();
+            }
+        });
+        btn_searchAP.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String seatchTxt = ET_searchText.getText().toString();
+                searchPigeon(seatchTxt);
+            }
+        });
 
     }
 
@@ -114,9 +139,17 @@ public class AllPigeons extends AppCompatActivity {
 
             Log.i(TAG,i+" RECYCLE VIEW "+(pigeonList.get(i).getPigeonRingNumber()));
 
-            /*viewHolder.TV_productName.setText(productList.get(i).getProductName());
+            /*viewHolder.TV_position.setText(productList.get(i).getProductName());
             viewHolder.TV_productQuantity.setText(productList.get(i).getProductStockQuantity()+" pc");
             viewHolder.TV_productPrice.setText(productList.get(i).getProductPrice()+" BDT");*/
+
+            viewHolder.TV_position.setText(pigeonList.get(i).getPosition()+"/"+pigeonList.get(i).getTotalPigeons()+" th");
+            viewHolder.TV_ringNumber.setText(pigeonList.get(i).getPigeonRingNumber());
+            viewHolder.TV_velocity.setText(pigeonList.get(i).getPigeonVelocity()+" YPM");
+            viewHolder.TV_owenerName.setText(pigeonList.get(i).getOwnerName());
+            viewHolder.TV_club.setText(pigeonList.get(i).getClubName());
+            viewHolder.TV_race.setText(pigeonList.get(i).getRaceName() +" ( "+pigeonList.get(i).getDistance()+" KM )");
+            viewHolder.TV_date.setText(pigeonList.get(i).getRaceDate());
 
             //Picasso.get().load(productList.get(i).getProductPicture()).fit().centerCrop().into(viewHolder.IV_productPic);
 
@@ -152,18 +185,20 @@ public class AllPigeons extends AppCompatActivity {
 
         public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener, View.OnLongClickListener {
 
-            public TextView TV_productName, TV_productBrand, TV_productID, TV_productQuantity, TV_productPrice;
-            public ImageView IV_productPic;
+            public TextView TV_position, TV_ringNumber, TV_velocity, TV_owenerName, TV_club, TV_race, TV_date;
+
             private ItemClickListener clickListener;
 
             public ViewHolder(View itemView) {
                 super(itemView);
 
-                /*TV_productName = itemView.findViewById(R.id.TV_productName);
-                TV_productQuantity = itemView.findViewById(R.id.TV_productQuantity);
-                TV_productPrice = itemView.findViewById(R.id.TV_productPrice);
-                IV_productPic = itemView.findViewById(R.id.IV_productPic);*/
-
+                TV_position = itemView.findViewById(R.id.TV_position);
+                TV_ringNumber = itemView.findViewById(R.id.TV_ringNumber);
+                TV_velocity = itemView.findViewById(R.id.TV_velocity);
+                TV_owenerName = itemView.findViewById(R.id.TV_owenerName);
+                TV_club = itemView.findViewById(R.id.TV_club);
+                TV_race = itemView.findViewById(R.id.TV_race);
+                TV_date = itemView.findViewById(R.id.TV_date);
 
                 itemView.setOnClickListener(this);
                 itemView.setOnLongClickListener(this);
@@ -187,16 +222,6 @@ public class AllPigeons extends AppCompatActivity {
 
     }
 
-    private void onClickListener(){
-
-        btn_allPigeonAP.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                readAll();
-            }
-        });
-
-    }
 
     private void readAll(){
         String readURL = "http://"+IP+"/BdRacingPIgeonDatabase/Pigeons/read.php";
@@ -244,11 +269,58 @@ public class AllPigeons extends AppCompatActivity {
 
 
     }
-
-    private void readOne(int searchText){
-        String searchURL = "http://"+IP+"/api/product/search.php?s="+searchText;
+    private void readOnlyFirst(){
+        String readURL = "http://"+IP+"/BdRacingPIgeonDatabase/Pigeons/readOnlyFirst.php";
 
         RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
+
+        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(
+                Request.Method.POST,
+                readURL,
+                null,
+                new Response.Listener<JSONObject>() {
+                    @Override
+                    public void onResponse(JSONObject response) {
+
+                        String jsonRes = response.toString();
+
+                        Log.i(TAG,jsonRes);
+
+                        Gson gson = new Gson();
+                        JsonParser parser = new JsonParser();
+                        JsonObject object = (JsonObject) parser.parse(jsonRes);// response will be the json String
+                        PigeonList pList = gson.fromJson(object, PigeonList.class);
+
+                        Log.i(TAG,pList.getRecords().toString());
+
+                        List<Pigeon> pp = pList.getRecords();
+
+                        PigeonList = pp;
+                        setAdapter();
+
+                        Log.i(TAG,"pp size : "+pp.size());
+                        Log.i(TAG,"pp 0 name = "+pp.get(0).getPigeonRingNumber());
+
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Log.i(TAG,"REST API ERROR on READ ALL:"+error.toString());
+                    }
+                }
+        );
+
+        requestQueue.add(jsonObjectRequest);
+
+
+    }
+    private void searchPigeon(String searchText){
+        String searchURL = "http://"+IP+"/BdRacingPigeonDatabase/Pigeons/search.php?s="+searchText;
+
+        RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
+
+        Log.i(TAG,"Search URL : "+searchURL);
 
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(
                 Request.Method.POST,
@@ -270,6 +342,9 @@ public class AllPigeons extends AppCompatActivity {
                         Log.i(TAG,emp.getRecords().toString());
 
                         List<Pigeon> pp = emp.getRecords();
+
+                        PigeonList = pp;
+                        setAdapter();
 
                         Log.i(TAG,"pp size : "+pp.size());
                         Log.i(TAG,"pp 0 name = "+pp.get(0).getPigeonRingNumber());

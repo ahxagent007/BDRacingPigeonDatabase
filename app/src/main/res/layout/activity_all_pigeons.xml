@@ -40,7 +40,7 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="ALl Pigeon"
+                android:text="Only 1st"
                 android:id="@+id/btn_topPigeonsAP"/>
 
             <Button
@@ -69,6 +69,8 @@
                 android:layout_height="match_parent"
                 android:layout_weight="2"
                 android:text="Search"
+                android:textStyle="bold"
+                android:textSize="12dp"
                 android:id="@+id/btn_searchAP"/>
 
         </LinearLayout>
