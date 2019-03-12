@@ -35,7 +35,8 @@ import java.util.Map;
 
 public class AllPigeons extends AppCompatActivity {
 
-    String IP = "192.168.0.105";
+    String pcIP = "192.168.0.105";
+    String IP = "bdracingpigeon.bdpigeonweb.com";
 
     String TAG = "XIAN";
 
@@ -245,7 +246,7 @@ public class AllPigeons extends AppCompatActivity {
 
     private void readAll(){
 
-        String readURL = "http://"+IP+"/BdRacingPIgeonDatabase/Pigeons/read.php";
+        String readURL = "http://"+IP+"/Pigeons/read.php";
 
         RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
 
@@ -293,7 +294,7 @@ public class AllPigeons extends AppCompatActivity {
 
     }
     private void readOnlyFirst(){
-        String readURL = "http://"+IP+"/BdRacingPIgeonDatabase/Pigeons/readOnlyFirst.php";
+        String readURL = "http://"+IP+"/Pigeons/readOnlyFirst.php";
 
         RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
 
@@ -341,7 +342,7 @@ public class AllPigeons extends AppCompatActivity {
 
     }
     private void searchPigeon(String searchText){
-        String searchURL = "http://"+IP+"/BdRacingPigeonDatabase/Pigeons/search.php?s="+searchText;
+        String searchURL = "http://"+IP+"Pigeons/search.php?s="+searchText;
 
         RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
 

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    android:orientation="vertical"
+    android:weightSum="3"
+    android:gravity="center"
+    android:background="#B9F6CA"
+    android:layout_margin="8dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:weightSum="3"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1.5"
+            android:text="BAN 14-75037 H+"
+            android:textSize="16dp"
+            android:gravity="center"
+            android:textColor="#000000"
+            android:textStyle="bold"
+            android:id="@+id/TV_ringNumber"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1.5"
+            android:text="MD. Faruk (Lalbag)"
+            android:textSize="16dp"
+            android:gravity="center"
+            android:textColor="#000000"
+            android:textStyle="normal"
+            android:id="@+id/TV_owenerName"/>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:weightSum="3"
+        android:gravity="center">
+
+
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:text="8 top Positions in BRPFC"
+            android:textSize="20dp"
+            android:gravity="center"
+            android:textColor="#000000"
+            android:textStyle="italic"
+            android:id="@+id/TV_position"/>
+
+    </LinearLayout>
+
+
+
+
+</LinearLayout>
