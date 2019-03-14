@@ -120,6 +120,14 @@ public class TopPigeons extends AppCompatActivity {
 
     }
 
+    private void setAdapterTP(){
+        // specify an adapter (see also next example)
+        mAdapter = new MyRVAdapterTP2(getApplicationContext(),TopPigeonList);
+        RV_recyclerViewTP.setAdapter(mAdapter);
+        RV_recyclerViewTP.setVisibility(View.VISIBLE);
+
+    }
+
     public class MyRVAdapterTP extends RecyclerView.Adapter<MyRVAdapterTP.ViewHolder> {
 
         List<Pigeon> pigeonList;
@@ -326,9 +334,9 @@ public class TopPigeons extends AppCompatActivity {
 
     }
 
-    private void ReadVelocity(){
+    private void TopPigeonsViaVelocity(){
 
-        String readURL = "http://"+IP+"/Pigeons/TopPigeons.php?s=VELOCITY";
+        String readURL = "http://"+IP+"/Pigeons/TopPigeonsViaVelocity.php";
 
         RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
 
@@ -373,6 +381,104 @@ public class TopPigeons extends AppCompatActivity {
 
         requestQueue.add(jsonObjectRequest);
 
+
+    }
+
+    private void TopPigeonsViaRaceCount(){
+
+        String readURL = "http://"+IP+"/Pigeons/TopPigeonsViaRaceCount.php";
+
+        RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
+
+        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(
+                Request.Method.POST,
+                readURL,
+                null,
+                new Response.Listener<JSONObject>() {
+                    @Override
+                    public void onResponse(JSONObject response) {
+
+                        String jsonRes = response.toString();
+
+                        Log.i(TAG,jsonRes);
+
+                        Gson gson = new Gson();
+                        JsonParser parser = new JsonParser();
+                        JsonObject object = (JsonObject) parser.parse(jsonRes);// response will be the json String
+                        TopPigeonList pList = gson.fromJson(object, TopPigeonList.class);
+
+                        Log.i(TAG,pList.getRecords().toString());
+
+                        List<TopPigeonModel> pp = pList.getRecords();
+
+                        TopPigeonList = pp;
+                        setAdapterTP();
+
+                        PB_loadingTP.setVisibility(View.INVISIBLE);
+
+                        Log.i(TAG,"pp size : "+pp.size());
+                        Log.i(TAG,"pp 0 name = "+pp.get(0).getPigeonRingNumber());
+
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Log.i(TAG,"REST API ERROR on READ ALL:"+error.toString());
+                    }
+                }
+        );
+
+        requestQueue.add(jsonObjectRequest);
+
+    }
+
+    private void TopPigeonsViaTopResult(){
+
+        String readURL = "http://"+IP+"/Pigeons/TopPigeonsViaTopResult.php";
+
+        RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
+
+        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(
+                Request.Method.POST,
+                readURL,
+                null,
+                new Response.Listener<JSONObject>() {
+                    @Override
+                    public void onResponse(JSONObject response) {
+
+                        String jsonRes = response.toString();
+
+                        Log.i(TAG,jsonRes);
+
+                        Gson gson = new Gson();
+                        JsonParser parser = new JsonParser();
+                        JsonObject object = (JsonObject) parser.parse(jsonRes);// response will be the json String
+                        TopPigeonList pList = gson.fromJson(object, TopPigeonList.class);
+
+                        Log.i(TAG,pList.getRecords().toString());
+
+                        List<TopPigeonModel> pp = pList.getRecords();
+
+                        TopPigeonList = pp;
+                        setAdapterTP();
+
+                        PB_loadingTP.setVisibility(View.INVISIBLE);
+
+                        Log.i(TAG,"pp size : "+pp.size());
+                        Log.i(TAG,"pp 0 name = "+pp.get(0).getPigeonRingNumber());
+
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Log.i(TAG,"REST API ERROR on READ ALL:"+error.toString());
+                    }
+                }
+        );
+
+        requestQueue.add(jsonObjectRequest);
 
     }
 
