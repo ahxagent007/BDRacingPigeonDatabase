@@ -17,6 +17,7 @@ public class Developer extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_developer);
 
+
         IV_email = findViewById(R.id.IV_email);
         IV_twitter = findViewById(R.id.IV_twitter);
         IV_linkedin = findViewById(R.id.IV_linkedin);
@@ -66,7 +67,7 @@ public class Developer extends AppCompatActivity {
         IV_youtube.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/DeXian"));
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/channel/UCo4qWAa9lcXbaK0Ut6apZ4w"));
                 startActivity(browserIntent);
             }
         });

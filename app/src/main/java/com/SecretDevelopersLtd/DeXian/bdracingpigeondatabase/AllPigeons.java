@@ -342,7 +342,7 @@ public class AllPigeons extends AppCompatActivity {
 
     }
     private void searchPigeon(String searchText){
-        String searchURL = "http://"+IP+"Pigeons/search.php?s="+searchText;
+        String searchURL = "http://"+IP+"/Pigeons/search.php?s="+searchText;
 
         RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
 

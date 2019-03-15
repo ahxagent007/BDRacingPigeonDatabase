@@ -33,8 +33,8 @@ import java.util.List;
 
 public class TopPigeons extends AppCompatActivity {
 
-    String IP = "192.168.0.104/BdRacingPigeonDatabase";
-    String rIP = "bdracingpigeon.bdpigeonweb.com";
+    String rIP = "192.168.0.104/BdRacingPigeonDatabase";
+    String IP = "bdracingpigeon.bdpigeonweb.com";
 
     String TAG = "XIAN";
 
@@ -298,7 +298,7 @@ public class TopPigeons extends AppCompatActivity {
 
             viewHolder.TV_ringNumber.setText(plist.get(i).getPigeonRingNumber());
             viewHolder.TV_owenerName.setText(plist.get(i).getOwnerName());
-            viewHolder.TV_position.setText(plist.get(i).getPositionLessThenFifty()+" top Positions in "+plist.get(i).getClubName());
+            viewHolder.TV_position.setText(plist.get(i).getPositionLessThenFifty()+" Top Positions in "+plist.get(i).getClubName());
 
 
             viewHolder.setClickListener(new ItemClickListener() {
@@ -396,7 +396,7 @@ public class TopPigeons extends AppCompatActivity {
 
             viewHolder.TV_ringNumber.setText(plist.get(i).getPigeonRingNumber());
             viewHolder.TV_owenerName.setText(plist.get(i).getOwnerName());
-            viewHolder.TV_position.setText("Played "+plist.get(i).getPositionLessThenFifty()+" Races in "+plist.get(i).getClubName());
+            viewHolder.TV_position.setText("Participated in "+plist.get(i).getPositionLessThenFifty()+" Races in "+plist.get(i).getClubName());
 
 
             viewHolder.setClickListener(new ItemClickListener() {

@@ -31,8 +31,8 @@ import java.util.List;
 public class TopFanciers extends AppCompatActivity {
 
 
-    String IP = "192.168.0.104/BdRacingPigeonDatabase";
-    String rIP = "bdracingpigeon.bdpigeonweb.com";
+    String rIP = "192.168.0.104/BdRacingPigeonDatabase";
+    String IP = "bdracingpigeon.bdpigeonweb.com";
 
     String TAG = "XIAN";
 
@@ -93,6 +93,10 @@ public class TopFanciers extends AppCompatActivity {
 
                 PB_loadingTF.setVisibility(View.VISIBLE);
 
+                //btn_byRace.setBackgroundColor(Color.TRANSPARENT);
+                //btn_byVelocity.setBackgroundColor(Color.TRANSPARENT);
+                btn_TopFancierViaPoint.setBackgroundColor(Color.GREEN);
+
 
             }
         });
@@ -136,6 +140,7 @@ public class TopFanciers extends AppCompatActivity {
 
             viewHolder.TV_ownerNameTF.setText(fancierList.get(i).getOwnerName());
             viewHolder.TV_positionTF.setText(fancierList.get(i).getPositionLessThenThirty()+" Top Position in "+fancierList.get(i).getRacePlayed()+" Races!");
+            viewHolder.TV_pointTF.setText("Point: "+String.format("%.02f",(float)fancierList.get(i).getPositionLessThenThirty()/(float)fancierList.get(i).getRacePlayed()));
 
             //Picasso.get().load(productList.get(i).getProductPicture()).fit().centerCrop().into(viewHolder.IV_productPic);
 
@@ -171,7 +176,7 @@ public class TopFanciers extends AppCompatActivity {
 
         public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener, View.OnLongClickListener {
 
-            public TextView TV_ownerNameTF,  TV_positionTF;
+            public TextView TV_ownerNameTF,  TV_positionTF, TV_pointTF;
 
             private ItemClickListener clickListener;
 
@@ -180,6 +185,8 @@ public class TopFanciers extends AppCompatActivity {
 
                 TV_ownerNameTF = itemView.findViewById(R.id.TV_ownerNameTF);
                 TV_positionTF = itemView.findViewById(R.id.TV_positionTF);
+                TV_pointTF = itemView.findViewById(R.id.TV_pointTF);
+
 
                 itemView.setOnClickListener(this);
                 itemView.setOnLongClickListener(this);

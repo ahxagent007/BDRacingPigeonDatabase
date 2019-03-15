@@ -1,6 +1,7 @@
 package com.SecretDevelopersLtd.DeXian.bdracingpigeondatabase;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -67,6 +68,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //URL to my app
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=pigeonpedigreepro.dexian.secretdevltd.com.pigeonpedigreepro"));
+                startActivity(browserIntent);
             }
         });
 
