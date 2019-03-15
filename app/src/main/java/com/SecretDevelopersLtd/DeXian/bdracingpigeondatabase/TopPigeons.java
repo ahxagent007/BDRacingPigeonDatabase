@@ -1,6 +1,9 @@
 package com.SecretDevelopersLtd.DeXian.bdracingpigeondatabase;
 
 import android.content.Context;
+import android.graphics.Color;
+import android.graphics.drawable.Drawable;
+import android.provider.CalendarContract;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -30,8 +33,8 @@ import java.util.List;
 
 public class TopPigeons extends AppCompatActivity {
 
-    String pcIP = "192.168.0.105";
-    String IP = "bdracingpigeon.bdpigeonweb.com";
+    String IP = "192.168.0.104/BdRacingPigeonDatabase";
+    String rIP = "bdracingpigeon.bdpigeonweb.com";
 
     String TAG = "XIAN";
 
@@ -53,6 +56,9 @@ public class TopPigeons extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_top_pigeons);
 
+
+        initial();
+        onClickListener();
 
 
     }
@@ -87,8 +93,13 @@ public class TopPigeons extends AppCompatActivity {
             public void onClick(View v) {
                 RV_recyclerViewTP.setVisibility(View.INVISIBLE);
 
+                TopPigeonsViaVelocity();
 
                 PB_loadingTP.setVisibility(View.VISIBLE);
+
+                btn_byRace.setBackgroundColor(Color.TRANSPARENT);
+                btn_byVelocity.setBackgroundColor(Color.GREEN);
+                btn_byResult.setBackgroundColor(Color.TRANSPARENT);
 
             }
         });
@@ -97,16 +108,28 @@ public class TopPigeons extends AppCompatActivity {
             public void onClick(View v) {
                 RV_recyclerViewTP.setVisibility(View.INVISIBLE);
 
+                TopPigeonsViaRaceCount();
+
                 PB_loadingTP.setVisibility(View.VISIBLE);
+
+                btn_byRace.setBackgroundColor(Color.GREEN);
+                btn_byVelocity.setBackgroundColor(Color.TRANSPARENT);
+                btn_byResult.setBackgroundColor(Color.TRANSPARENT);
             }
         });
+
         btn_byResult.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 RV_recyclerViewTP.setVisibility(View.INVISIBLE);
 
+                TopPigeonsViaTopResult();
 
                 PB_loadingTP.setVisibility(View.VISIBLE);
+
+                btn_byRace.setBackgroundColor(Color.TRANSPARENT);
+                btn_byVelocity.setBackgroundColor(Color.TRANSPARENT);
+                btn_byResult.setBackgroundColor(Color.GREEN);
             }
         });
 
@@ -123,6 +146,14 @@ public class TopPigeons extends AppCompatActivity {
     private void setAdapterTP(){
         // specify an adapter (see also next example)
         mAdapter = new MyRVAdapterTP2(getApplicationContext(),TopPigeonList);
+        RV_recyclerViewTP.setAdapter(mAdapter);
+        RV_recyclerViewTP.setVisibility(View.VISIBLE);
+
+    }
+
+    private void setAdapterTPR(){
+        // specify an adapter (see also next example)
+        mAdapter = new MyRVAdapterTP3(getApplicationContext(),TopPigeonList);
         RV_recyclerViewTP.setAdapter(mAdapter);
         RV_recyclerViewTP.setVisibility(View.VISIBLE);
 
@@ -334,6 +365,105 @@ public class TopPigeons extends AppCompatActivity {
 
     }
 
+    public class MyRVAdapterTP3 extends RecyclerView.Adapter<MyRVAdapterTP3.ViewHolder> {
+
+        List<TopPigeonModel> plist;
+        Context context;
+
+        public MyRVAdapterTP3(Context context, List<TopPigeonModel> pList) {
+            super();
+            this.context = context;
+            this.plist = pList;
+            Log.i(TAG,"RECYCLE VIEW COnstructor");
+        }
+
+        @Override
+        public ViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
+            View v = LayoutInflater.from(viewGroup.getContext())
+                    .inflate(R.layout.single_top_pigeon_for_list, viewGroup, false);
+            ViewHolder viewHolder = new ViewHolder(v);
+            return viewHolder;
+        }
+
+        @Override
+        public void onBindViewHolder(final ViewHolder viewHolder, final int i) {
+
+            Log.i(TAG,i+" RECYCLE VIEW "+(plist.get(i).getPigeonRingNumber()));
+
+            /*viewHolder.TV_position.setText(productList.get(i).getProductName());
+            viewHolder.TV_productQuantity.setText(productList.get(i).getProductStockQuantity()+" pc");
+            viewHolder.TV_productPrice.setText(productList.get(i).getProductPrice()+" BDT");*/
+
+            viewHolder.TV_ringNumber.setText(plist.get(i).getPigeonRingNumber());
+            viewHolder.TV_owenerName.setText(plist.get(i).getOwnerName());
+            viewHolder.TV_position.setText("Played "+plist.get(i).getPositionLessThenFifty()+" Races in "+plist.get(i).getClubName());
+
+
+            viewHolder.setClickListener(new ItemClickListener() {
+                @Override
+                public void onClick(View view, final int position, boolean isLongClick) {
+
+                    /*viewHolder.IV_productPic.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            ShowPicture(productList.get(position).getProductPicture());
+                        }
+                    });*/
+
+                    if (isLongClick) {
+                        //Toast.makeText(context, "#" + position + " (Long click)", Toast.LENGTH_SHORT).show();
+                        //showPopupMenu(view,position);
+
+                    } else {
+                        //Toast.makeText(context, "#" + position + " Not Long Click", Toast.LENGTH_SHORT).show();
+
+                    }
+                }
+            });
+        }
+
+        @Override
+        public int getItemCount() {
+            return plist.size();
+        }
+
+        public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener, View.OnLongClickListener {
+
+            public TextView TV_ringNumber, TV_owenerName, TV_position;
+
+            private ItemClickListener clickListener;
+
+            public ViewHolder(View itemView) {
+                super(itemView);
+
+                TV_ringNumber = itemView.findViewById(R.id.TV_ringNumber);
+                TV_owenerName = itemView.findViewById(R.id.TV_owenerName);
+                TV_position = itemView.findViewById(R.id.TV_position);
+
+
+                itemView.setOnClickListener(this);
+                itemView.setOnLongClickListener(this);
+            }
+
+            public void setClickListener(ItemClickListener itemClickListener) {
+                this.clickListener = itemClickListener;
+            }
+
+            @Override
+            public void onClick(View view) {
+                clickListener.onClick(view, getPosition(), false);
+            }
+
+            @Override
+            public boolean onLongClick(View view) {
+                clickListener.onClick(view, getPosition(), true);
+                return true;
+            }
+        }
+
+    }
+
+
     private void TopPigeonsViaVelocity(){
 
         String readURL = "http://"+IP+"/Pigeons/TopPigeonsViaVelocity.php";
@@ -412,7 +542,7 @@ public class TopPigeons extends AppCompatActivity {
                         List<TopPigeonModel> pp = pList.getRecords();
 
                         TopPigeonList = pp;
-                        setAdapterTP();
+                        setAdapterTPR();
 
                         PB_loadingTP.setVisibility(View.INVISIBLE);
 

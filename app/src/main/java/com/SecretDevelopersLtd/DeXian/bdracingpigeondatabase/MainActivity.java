@@ -42,5 +42,51 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
+        btn_TopPigeons.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(),TopPigeons.class));
+            }
+        });
+        btn_TopClubs.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(),TopClubs.class));
+            }
+        });
+
+        btn_TopFanciers.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(),TopFanciers.class));
+            }
+        });
+
+        btn_PigeonPedigree.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //URL to my app
+            }
+        });
+
+        btn_Developer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(),Developer.class));
+            }
+        });
+
+        btn_Report.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(),ReportToUs.class));
+            }
+        });
+
+
+
+
+
     }
 }

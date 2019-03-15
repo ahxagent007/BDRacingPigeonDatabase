@@ -11,7 +11,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".TopFanciers"></activity>
+        <activity android:name=".ReportToUs"></activity>
+        <activity android:name=".Developer" />
+        <activity android:name=".TopClubs" />
+        <activity android:name=".TopFanciers" />
         <activity android:name=".TopPigeons" />
         <activity android:name=".AllPigeons" />
         <activity android:name=".MainActivity">
