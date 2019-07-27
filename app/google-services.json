@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "760480964806",
+    "firebase_url": "https://bd-racing-pigeon-database.firebaseio.com",
+    "project_id": "bd-racing-pigeon-database",
+    "storage_bucket": "bd-racing-pigeon-database.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:760480964806:android:992d8bd7f9faf356",
+        "android_client_info": {
+          "package_name": "com.SecretDevelopersLtd.DeXian.bdracingpigeondatabase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "760480964806-dfe8nk5g6spsfcudnidvprb1behv6akc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.SecretDevelopersLtd.DeXian.bdracingpigeondatabase",
+            "certificate_hash": "b91ef6edde66a05090ac39b6bfcba8cb3fec898c"
+          }
+        },
+        {
+          "client_id": "760480964806-0ovinlmkcgcj0vbj1mcp6gv904s588v2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCydqlf1PPEF48CmHDl9bzAXjtWtEUCdm0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "760480964806-0ovinlmkcgcj0vbj1mcp6gv904s588v2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

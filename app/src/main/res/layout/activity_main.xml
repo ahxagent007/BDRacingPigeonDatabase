@@ -98,11 +98,31 @@
             android:id="@+id/btn_Report"/>
 
         <Button
+            android:id="@+id/btn_buyPigeon"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="Add Feature"/>
+            android:text="BUY Racing Pigeon"/>
 
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center">
+
+        <com.google.android.gms.ads.AdView
+            xmlns:ads="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/adView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            ads:adSize="BANNER"
+            ads:adUnitId="ca-app-pub-6049858234928469/5081829381">
+        </com.google.android.gms.ads.AdView>
 
     </LinearLayout>
 

@@ -24,11 +24,11 @@
         android:weightSum="20"
         >
 
-        <android.support.v7.widget.RecyclerView
+        <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/RV_recyclerView"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="16"></android.support.v7.widget.RecyclerView>
+            android:layout_weight="16"></androidx.recyclerview.widget.RecyclerView>
 
 
 
