@@ -7,7 +7,27 @@
     tools:context=".MainActivity"
     android:orientation="vertical"
     android:weightSum="10"
-    android:gravity="center">
+    android:gravity="center"
+    android:background="@drawable/blue_bg">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="BD Racing Pigeon Database"
+            android:textColor="#FFFFFF"
+            android:textSize="30dp"
+            android:background="@drawable/bg_dark_blue"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:fontFamily="cursive"
+            />
+
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -20,16 +40,10 @@
         <Button
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="Pigeons"
-            android:id="@+id/btn_Pigeons"/>
-
-        <Button
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="Top Pigeons"
-            android:id="@+id/btn_TopPigeons"/>
+            android:layout_weight="2"
+            android:id="@+id/btn_racingPigeons"
+            android:background="@drawable/pressed_racing_pigeons"
+            android:layout_margin="10dp"/>
 
 
     </LinearLayout>
@@ -46,15 +60,17 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="Top Clubs"
-            android:id="@+id/btn_TopClubs"/>
+            android:id="@+id/btn_racerClubs"
+            android:background="@drawable/pressed_racer_club"
+            android:layout_margin="10dp"/>
 
         <Button
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="Top Fanciers"
-            android:id="@+id/btn_TopFanciers"/>
+            android:id="@+id/btn_auctionSite"
+            android:background="@drawable/pressed_auction"
+            android:layout_margin="10dp"/>
 
 
     </LinearLayout>
@@ -69,17 +85,10 @@
         <Button
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="Pigeon Pedigree"
-            android:id="@+id/btn_PigeonPedigree"/>
-
-        <Button
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="Developer"
-            android:id="@+id/btn_Developer"/>
-
+            android:layout_weight="2"
+            android:id="@+id/btn_buy_sell"
+            android:background="@drawable/pressed_buy_sell"
+            android:layout_margin="10dp"/>
 
     </LinearLayout>
 
@@ -94,15 +103,17 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="Report any problem"
-            android:id="@+id/btn_Report"/>
+            android:id="@+id/btn_pigeonPedigree"
+            android:background="@drawable/pressed_pp"
+            android:layout_margin="10dp"/>
 
         <Button
-            android:id="@+id/btn_buyPigeon"
+            android:id="@+id/btn_developer"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="BUY Racing Pigeon"/>
+            android:background="@drawable/pressed_developer"
+            android:layout_margin="10dp"/>
 
 
     </LinearLayout>

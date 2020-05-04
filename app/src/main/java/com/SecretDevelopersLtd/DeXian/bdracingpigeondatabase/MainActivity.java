@@ -18,7 +18,8 @@ import com.google.android.gms.ads.initialization.OnInitializationCompleteListene
 
 public class MainActivity extends AppCompatActivity {
 
-    Button btn_Pigeons, btn_TopPigeons, btn_TopClubs, btn_TopFanciers, btn_PigeonPedigree, btn_Developer, btn_Report, btn_buyPigeon;
+    //Button btn_Pigeons, btn_TopPigeons, btn_TopClubs, btn_TopFanciers, btn_PigeonPedigree, btn_Developer, btn_Report, btn_buyPigeon;
+    Button btn_racingPigeons, btn_racerClubs, btn_auctionSite, btn_buy_sell, btn_pigeonPedigree, btn_developer;
     private AdView mAdView;
     private InterstitialAd mInterstitialAd;
 
@@ -37,14 +38,12 @@ public class MainActivity extends AppCompatActivity {
 
     private void initialAll(){
 
-        btn_Pigeons = findViewById(R.id.btn_Pigeons);
-        btn_TopPigeons = findViewById(R.id.btn_TopPigeons);
-        btn_TopClubs = findViewById(R.id.btn_TopClubs);
-        btn_TopFanciers = findViewById(R.id.btn_TopFanciers);
-        btn_PigeonPedigree = findViewById(R.id.btn_PigeonPedigree);
-        btn_Developer = findViewById(R.id.btn_Developer);
-        btn_Report = findViewById(R.id.btn_Report);
-        btn_buyPigeon = findViewById(R.id.btn_buyPigeon);
+        btn_racingPigeons = findViewById(R.id.btn_racingPigeons);
+        btn_racerClubs = findViewById(R.id.btn_racerClubs);
+        btn_auctionSite = findViewById(R.id.btn_auctionSite);
+        btn_buy_sell = findViewById(R.id.btn_buy_sell);
+        btn_pigeonPedigree = findViewById(R.id.btn_pigeonPedigree);
+        btn_developer = findViewById(R.id.btn_developer);
 
         MobileAds.initialize(this, new OnInitializationCompleteListener() {
             @Override
@@ -73,7 +72,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void onClickListener(){
 
-        btn_Pigeons.setOnClickListener(new View.OnClickListener() {
+        /*btn_Pigeons.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Load_popUu_Ads();
@@ -103,9 +102,9 @@ public class MainActivity extends AppCompatActivity {
                 Load_popUu_Ads();
                 startActivity(new Intent(getApplicationContext(),TopFanciers.class));
             }
-        });
+        });*/
 
-        btn_PigeonPedigree.setOnClickListener(new View.OnClickListener() {
+        btn_pigeonPedigree.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Load_popUu_Ads();
@@ -115,7 +114,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        btn_Developer.setOnClickListener(new View.OnClickListener() {
+        btn_developer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Load_popUu_Ads();
@@ -123,16 +122,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        btn_Report.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Load_popUu_Ads();
-
-                startActivity(new Intent(getApplicationContext(),ReportToUs.class));
-            }
-        });
-
-        btn_buyPigeon.setOnClickListener(new View.OnClickListener() {
+        /*btn_buyPigeon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
@@ -141,6 +131,34 @@ public class MainActivity extends AppCompatActivity {
                 Uri uri = Uri.parse("https://www.bdpigeonweb.com");
                 Intent intent = new Intent(Intent.ACTION_VIEW, uri);
                 startActivity(intent);
+            }
+        });*/
+
+        btn_racingPigeons.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+        btn_racerClubs.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+        btn_auctionSite.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+        btn_buy_sell.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
             }
         });
 
