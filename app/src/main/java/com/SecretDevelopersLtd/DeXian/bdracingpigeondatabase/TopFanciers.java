@@ -95,7 +95,7 @@ public class TopFanciers extends AppCompatActivity {
 
                 //btn_byRace.setBackgroundColor(Color.TRANSPARENT);
                 //btn_byVelocity.setBackgroundColor(Color.TRANSPARENT);
-                btn_TopFancierViaPoint.setBackgroundColor(Color.GREEN);
+                btn_TopFancierViaPoint.setBackground(getResources().getDrawable(R.drawable.bg_dark_blue_2_orange));
 
 
             }

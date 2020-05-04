@@ -95,9 +95,9 @@ public class TopPigeons extends AppCompatActivity {
 
                 PB_loadingTP.setVisibility(View.VISIBLE);
 
-                btn_byRace.setBackgroundColor(Color.TRANSPARENT);
-                btn_byVelocity.setBackgroundColor(Color.GREEN);
-                btn_byResult.setBackgroundColor(Color.TRANSPARENT);
+                btn_byRace.setBackground(getResources().getDrawable(R.drawable.pressed_btn_2));
+                btn_byVelocity.setBackground(getResources().getDrawable(R.drawable.bg_dark_blue_2_orange));
+                btn_byResult.setBackground(getResources().getDrawable(R.drawable.pressed_btn_2));
 
             }
         });
@@ -110,9 +110,9 @@ public class TopPigeons extends AppCompatActivity {
 
                 PB_loadingTP.setVisibility(View.VISIBLE);
 
-                btn_byRace.setBackgroundColor(Color.GREEN);
-                btn_byVelocity.setBackgroundColor(Color.TRANSPARENT);
-                btn_byResult.setBackgroundColor(Color.TRANSPARENT);
+                btn_byRace.setBackground(getResources().getDrawable(R.drawable.bg_dark_blue_2_orange));
+                btn_byVelocity.setBackground(getResources().getDrawable(R.drawable.pressed_btn_2));
+                btn_byResult.setBackground(getResources().getDrawable(R.drawable.pressed_btn_2));
             }
         });
 
@@ -125,9 +125,9 @@ public class TopPigeons extends AppCompatActivity {
 
                 PB_loadingTP.setVisibility(View.VISIBLE);
 
-                btn_byRace.setBackgroundColor(Color.TRANSPARENT);
-                btn_byVelocity.setBackgroundColor(Color.TRANSPARENT);
-                btn_byResult.setBackgroundColor(Color.GREEN);
+                btn_byRace.setBackground(getResources().getDrawable(R.drawable.pressed_btn_2));
+                btn_byVelocity.setBackground(getResources().getDrawable(R.drawable.pressed_btn_2));
+                btn_byResult.setBackground(getResources().getDrawable(R.drawable.bg_dark_blue_2_orange));
             }
         });
 
