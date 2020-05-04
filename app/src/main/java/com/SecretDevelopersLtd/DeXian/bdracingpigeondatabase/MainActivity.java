@@ -137,7 +137,7 @@ public class MainActivity extends AppCompatActivity {
         btn_racingPigeons.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                startActivity(new Intent(getApplicationContext(), RacingPigeonActivity.class));
             }
         });
 

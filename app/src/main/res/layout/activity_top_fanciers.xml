@@ -6,7 +6,27 @@
     android:layout_height="match_parent"
     tools:context=".TopFanciers"
     android:orientation="vertical"
-    android:weightSum="12">
+    android:weightSum="20"
+    android:background="@drawable/blue_bg">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="BD Racing Pigeon Database"
+            android:textColor="#FFFFFF"
+            android:textSize="30dp"
+            android:background="@drawable/bg_dark_blue"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:fontFamily="cursive"
+            />
+
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -20,17 +40,26 @@
             android:layout_height="match_parent"
             android:layout_weight="4"
             android:text="Point"
+            android:background="@drawable/pressed_btn_2"
+            android:textColor="#FFFFFF"
+            android:layout_margin="5dp"
             android:id="@+id/btn_TopFancierViaPoint"/>
         <Button
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="4"
+            android:background="@drawable/pressed_btn_2"
+            android:textColor="#FFFFFF"
+            android:layout_margin="5dp"
             android:text=""/>
 
         <Button
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="4"
+            android:background="@drawable/pressed_btn_2"
+            android:textColor="#FFFFFF"
+            android:layout_margin="5dp"
             android:text=""/>
 
     </LinearLayout>
@@ -38,7 +67,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="10">
+        android:layout_weight="17">
 
         <ProgressBar
             android:layout_width="200dp"

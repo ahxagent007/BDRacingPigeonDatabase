@@ -6,8 +6,28 @@
     android:layout_height="match_parent"
     tools:context=".TopPigeons"
     android:orientation="vertical"
-    android:weightSum="12"
-    android:layout_margin="5dp">
+    android:weightSum="20"
+    android:layout_margin="5dp"
+    android:background="@drawable/blue_bg">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="BD Racing Pigeon Database"
+            android:textColor="#FFFFFF"
+            android:textSize="30dp"
+            android:background="@drawable/bg_dark_blue"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:fontFamily="cursive"
+            />
+
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -21,12 +41,18 @@
             android:layout_height="match_parent"
             android:layout_weight="4"
             android:text="Velocity"
+            android:background="@drawable/pressed_btn_2"
+            android:textColor="#FFFFFF"
+            android:layout_margin="5dp"
             android:id="@+id/btn_byVelocity"/>
         <Button
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="4"
             android:text="Race"
+            android:background="@drawable/pressed_btn_2"
+            android:textColor="#FFFFFF"
+            android:layout_margin="5dp"
             android:id="@+id/btn_byRace"/>
 
         <Button
@@ -34,6 +60,9 @@
             android:layout_height="match_parent"
             android:layout_weight="4"
             android:text="Result"
+            android:background="@drawable/pressed_btn_2"
+            android:textColor="#FFFFFF"
+            android:layout_margin="5dp"
             android:id="@+id/btn_byResult"/>
 
     </LinearLayout>
@@ -41,7 +70,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="10">
+        android:layout_weight="17">
 
         <ProgressBar
             android:layout_width="200dp"

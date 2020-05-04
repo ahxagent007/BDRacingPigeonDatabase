@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".AllPigeons"
+    android:background="@drawable/blue_bg"
     >
 
 
@@ -24,18 +25,37 @@
         android:weightSum="20"
         >
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="BD Racing Pigeon Database"
+                android:textColor="#FFFFFF"
+                android:textSize="30dp"
+                android:background="@drawable/bg_dark_blue"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:fontFamily="cursive"
+                />
+
+        </LinearLayout>
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/RV_recyclerView"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="16"></androidx.recyclerview.widget.RecyclerView>
+            android:layout_weight="15"></androidx.recyclerview.widget.RecyclerView>
 
 
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="4"
+            android:layout_weight="3"
             android:weightSum="2"
             android:orientation="vertical">
 
@@ -48,23 +68,32 @@
                 <Button
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="1"
+                    android:layout_weight="1.5"
                     android:text="All Pigeon"
+                    android:background="@drawable/pressed_btn_2"
+                    android:textColor="#FFFFFF"
+                    android:layout_margin="5dp"
                     android:id="@+id/btn_allPigeonAP"/>
 
                 <Button
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="1"
+                    android:layout_weight="1.5"
                     android:text="Only 1st"
+                    android:background="@drawable/pressed_btn_2"
+                    android:textColor="#FFFFFF"
+                    android:layout_margin="5dp"
                     android:id="@+id/btn_topPigeonsAP"/>
 
-                <Button
+                <!---<Button
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:text="NULL"
-                    android:id="@+id/btn_nullAP"/>
+                    android:background="@drawable/pressed_btn_2"
+                    android:textColor="#FFFFFF"
+                    android:layout_margin="5dp"
+                    android:id="@+id/btn_nullAP"/>-->
 
             </LinearLayout>
 
@@ -87,6 +116,9 @@
                     android:text="Search"
                     android:textStyle="bold"
                     android:textSize="12dp"
+                    android:background="@drawable/pressed_btn_2"
+                    android:textColor="#FFFFFF"
+                    android:layout_margin="5dp"
                     android:id="@+id/btn_searchAP"/>
 
             </LinearLayout>

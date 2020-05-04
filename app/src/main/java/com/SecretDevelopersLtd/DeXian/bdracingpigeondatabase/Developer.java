@@ -6,11 +6,13 @@ import android.net.Uri;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 
 public class Developer extends AppCompatActivity {
 
     private ImageView IV_email, IV_linkedin, IV_twitter, IV_facebook, IV_ista, IV_youtube;
+    Button btn_secretDev;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +26,7 @@ public class Developer extends AppCompatActivity {
         IV_facebook = findViewById(R.id.IV_facebook);
         IV_ista = findViewById(R.id.IV_ista);
         IV_youtube = findViewById(R.id.IV_youtube);
+        btn_secretDev = findViewById(R.id.btn_secretDev);
 
         IV_email.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -68,6 +71,14 @@ public class Developer extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/channel/UCo4qWAa9lcXbaK0Ut6apZ4w"));
+                startActivity(browserIntent);
+            }
+        });
+
+        btn_secretDev.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.secretdevbd.com"));
                 startActivity(browserIntent);
             }
         });
