@@ -163,7 +163,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Load_popUu_Ads();
-
+                startActivity(new Intent(getApplicationContext(), BuyAndSellActivity.class));
             }
         });
 

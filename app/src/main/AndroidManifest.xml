@@ -12,7 +12,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".Activities.AuctionSite"></activity>
+        <activity android:name=".Activities.BuyAndSellActivity"></activity>
+        <activity android:name=".Activities.AuctionSite" />
         <activity android:name=".Activities.WebViewActivity" />
         <activity android:name=".Activities.RacerClubsActivity" />
         <activity android:name=".Activities.RacingPigeonActivity" />

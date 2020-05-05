@@ -28,6 +28,16 @@ public class WebViewActivity extends AppCompatActivity {
         String userAgent = "Mozilla/5.0 (Linux; Android 4.4; Nexus 5 Build/_BuildID_) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/30.0.0.0 Mobile Safari/537.36";
         WV_webview.getSettings().setUserAgentString(userAgent);
 
+        WV_webview.setWebViewClient(new WebViewClient() {
+            @Override
+            public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                    view.loadUrl(request.getUrl().toString());
+                }
+                return false;
+            }
+        });
+
         WV_webview.loadUrl(website);
 
     }
