@@ -12,14 +12,15 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".WebViewActivity"></activity>
-        <activity android:name=".RacerClubsActivity" />
-        <activity android:name=".RacingPigeonActivity" />
-        <activity android:name=".Developer" />
-        <activity android:name=".TopFanciers" />
-        <activity android:name=".TopPigeons" />
-        <activity android:name=".AllPigeons" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".Activities.AuctionSite"></activity>
+        <activity android:name=".Activities.WebViewActivity" />
+        <activity android:name=".Activities.RacerClubsActivity" />
+        <activity android:name=".Activities.RacingPigeonActivity" />
+        <activity android:name=".Activities.Developer" />
+        <activity android:name=".Activities.TopFanciers" />
+        <activity android:name=".Activities.TopPigeons" />
+        <activity android:name=".Activities.AllPigeons" />
+        <activity android:name=".Activities.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

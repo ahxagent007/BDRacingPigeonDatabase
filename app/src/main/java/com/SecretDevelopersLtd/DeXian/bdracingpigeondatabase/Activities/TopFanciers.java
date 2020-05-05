@@ -1,7 +1,7 @@
-package com.SecretDevelopersLtd.DeXian.bdracingpigeondatabase;
+package com.SecretDevelopersLtd.DeXian.bdracingpigeondatabase.Activities;
 
 import android.content.Context;
-import android.graphics.Color;
+
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -14,6 +14,10 @@ import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import com.SecretDevelopersLtd.DeXian.bdracingpigeondatabase.Activities.TopFancierList;
+import com.SecretDevelopersLtd.DeXian.bdracingpigeondatabase.ItemClickListener;
+import com.SecretDevelopersLtd.DeXian.bdracingpigeondatabase.R;
+import com.SecretDevelopersLtd.DeXian.bdracingpigeondatabase.TopFancierModel;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -231,7 +235,7 @@ public class TopFanciers extends AppCompatActivity {
                         Gson gson = new Gson();
                         JsonParser parser = new JsonParser();
                         JsonObject object = (JsonObject) parser.parse(jsonRes);// response will be the json String
-                        TopFancierList fList = gson.fromJson(object, TopFancierList.class);
+                        com.SecretDevelopersLtd.DeXian.bdracingpigeondatabase.Activities.TopFancierList fList = gson.fromJson(object, TopFancierList.class);
 
                         Log.i(TAG,fList.getRecords().toString());
 

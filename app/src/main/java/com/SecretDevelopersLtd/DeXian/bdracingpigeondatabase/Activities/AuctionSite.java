@@ -1,4 +1,4 @@
-package com.SecretDevelopersLtd.DeXian.bdracingpigeondatabase;
+package com.SecretDevelopersLtd.DeXian.bdracingpigeondatabase.Activities;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -17,6 +17,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.SecretDevelopersLtd.DeXian.bdracingpigeondatabase.DB.ClubFDB;
+import com.SecretDevelopersLtd.DeXian.bdracingpigeondatabase.ItemClickListener;
+import com.SecretDevelopersLtd.DeXian.bdracingpigeondatabase.R;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.bitmap.CenterInside;
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners;
@@ -27,47 +29,46 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
-import java.util.Collections;
 
-public class RacerClubsActivity extends AppCompatActivity {
+public class AuctionSite extends AppCompatActivity {
 
-    String TAG = "XIAN";
+    String TAG = "XINA";
 
-    ProgressBar PB_loadingClub;
-    RecyclerView RV_clubz;
+    ProgressBar PB_loadingAuction;
+    RecyclerView RV_auction;
 
     DatabaseReference databaseRefClub;
 
-    ArrayList<ClubFDB> clubs = new ArrayList<ClubFDB>();
+    ArrayList<ClubFDB> auction = new ArrayList<ClubFDB>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_racer_clubs);
+        setContentView(R.layout.activity_auction_site);
 
-        RV_clubz = findViewById(R.id.RV_clubz);
-        PB_loadingClub = findViewById(R.id.PB_loadingClub);
+        RV_auction = findViewById(R.id.RV_auction);
+        PB_loadingAuction = findViewById(R.id.PB_loadingAuction);
 
-        databaseRefClub = FirebaseDatabase.getInstance().getReference("BD_CLUB");
+        databaseRefClub = FirebaseDatabase.getInstance().getReference("AUCTION_SITE");
 
         databaseRefClub.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                clubs.clear();
+                auction.clear();
 
                 for(DataSnapshot ds : dataSnapshot.getChildren()){
                     ClubFDB res = ds.getValue(ClubFDB.class);
-                    clubs.add(res);
+                    auction.add(res);
                 }
 
 
                 RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext(), LinearLayoutManager.VERTICAL, false);
-                RV_clubz.setLayoutManager(mLayoutManager);
+                RV_auction.setLayoutManager(mLayoutManager);
 
-                RecyclerView.Adapter mRecycleAdapter = new RecycleViewAdapterForClubs(getApplicationContext(), clubs);
-                RV_clubz.setAdapter(mRecycleAdapter);
+                RecyclerView.Adapter mRecycleAdapter = new RecycleViewAdapterForClubs(getApplicationContext(), auction);
+                RV_auction.setAdapter(mRecycleAdapter);
 
-                PB_loadingClub.setVisibility(View.INVISIBLE);
+                PB_loadingAuction.setVisibility(View.INVISIBLE);
             }
 
             @Override

@@ -1,4 +1,4 @@
-package com.SecretDevelopersLtd.DeXian.bdracingpigeondatabase;
+package com.SecretDevelopersLtd.DeXian.bdracingpigeondatabase.Activities;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
+import com.SecretDevelopersLtd.DeXian.bdracingpigeondatabase.R;
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
@@ -137,6 +138,7 @@ public class MainActivity extends AppCompatActivity {
         btn_racingPigeons.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Load_popUu_Ads();
                 startActivity(new Intent(getApplicationContext(), RacingPigeonActivity.class));
             }
         });
@@ -144,6 +146,7 @@ public class MainActivity extends AppCompatActivity {
         btn_racerClubs.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Load_popUu_Ads();
                 startActivity(new Intent(getApplicationContext(), RacerClubsActivity.class));
             }
         });
@@ -151,13 +154,15 @@ public class MainActivity extends AppCompatActivity {
         btn_auctionSite.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Load_popUu_Ads();
+                startActivity(new Intent(getApplicationContext(), AuctionSite.class));
             }
         });
 
         btn_buy_sell.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Load_popUu_Ads();
 
             }
         });

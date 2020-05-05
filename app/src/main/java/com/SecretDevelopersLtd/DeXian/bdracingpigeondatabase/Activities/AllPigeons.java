@@ -1,4 +1,4 @@
-package com.SecretDevelopersLtd.DeXian.bdracingpigeondatabase;
+package com.SecretDevelopersLtd.DeXian.bdracingpigeondatabase.Activities;
 
 import android.content.Context;
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,6 +14,10 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import com.SecretDevelopersLtd.DeXian.bdracingpigeondatabase.ItemClickListener;
+import com.SecretDevelopersLtd.DeXian.bdracingpigeondatabase.Pigeon;
+import com.SecretDevelopersLtd.DeXian.bdracingpigeondatabase.PigeonList;
+import com.SecretDevelopersLtd.DeXian.bdracingpigeondatabase.R;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -263,7 +267,7 @@ public class AllPigeons extends AppCompatActivity {
                         Gson gson = new Gson();
                         JsonParser parser = new JsonParser();
                         JsonObject object = (JsonObject) parser.parse(jsonRes);// response will be the json String
-                        PigeonList pList = gson.fromJson(object, PigeonList.class);
+                        com.SecretDevelopersLtd.DeXian.bdracingpigeondatabase.PigeonList pList = gson.fromJson(object, PigeonList.class);
 
                         Log.i(TAG,pList.getRecords().toString());
 

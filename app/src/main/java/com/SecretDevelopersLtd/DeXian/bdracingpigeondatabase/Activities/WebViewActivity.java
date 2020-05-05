@@ -1,4 +1,4 @@
-package com.SecretDevelopersLtd.DeXian.bdracingpigeondatabase;
+package com.SecretDevelopersLtd.DeXian.bdracingpigeondatabase.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,6 +8,8 @@ import android.view.View;
 import android.webkit.WebResourceRequest;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+
+import com.SecretDevelopersLtd.DeXian.bdracingpigeondatabase.R;
 
 public class WebViewActivity extends AppCompatActivity {
 
