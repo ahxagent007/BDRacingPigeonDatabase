@@ -12,7 +12,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".RacerClubsActivity"></activity>
+        <activity android:name=".WebViewActivity"></activity>
+        <activity android:name=".RacerClubsActivity" />
         <activity android:name=".RacingPigeonActivity" />
         <activity android:name=".Developer" />
         <activity android:name=".TopFanciers" />

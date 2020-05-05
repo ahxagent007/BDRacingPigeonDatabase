@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/pressed_btn_2"
+    android:layout_margin="10dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:orientation="horizontal"
+        android:weightSum="10"
+        android:padding="10dp"
+        >
+
+        <ImageView
+            android:id="@+id/IV_clubPic"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/secret_dev_logo"
+            android:layout_weight="4"/>
+
+        <TextView
+            android:id="@+id/TV_clubName"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="6"
+            android:text="Bangladesh Racing Pigeons Entrepreneur Limited (BRPEL)"
+            android:textColor="#FFFFFF"
+            android:gravity="center"
+            android:textSize="17dp"
+            android:textStyle="bold"/>
+
+
+    </LinearLayout>
+
+
+</LinearLayout>
