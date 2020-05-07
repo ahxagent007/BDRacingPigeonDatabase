@@ -123,18 +123,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        /*btn_buyPigeon.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                Load_popUu_Ads();
-
-                Uri uri = Uri.parse("https://www.bdpigeonweb.com");
-                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
-                startActivity(intent);
-            }
-        });*/
-
         btn_racingPigeons.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -206,8 +194,6 @@ public class MainActivity extends AppCompatActivity {
                 mInterstitialAd.loadAd(new AdRequest.Builder().build());
             }
         });
-
-
 
     }
 
