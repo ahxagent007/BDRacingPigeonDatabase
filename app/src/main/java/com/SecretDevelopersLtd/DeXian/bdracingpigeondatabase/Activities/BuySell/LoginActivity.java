@@ -223,8 +223,8 @@ public class LoginActivity extends AppCompatActivity {
 
 
                     }else {
-                        Log.i(TAG,"Login failed");
-                        Toast.makeText(getApplicationContext(),"Wrong Password or Email",Toast.LENGTH_LONG).show();
+                        Log.i(TAG,"Login failed : "+task.getException());
+                        Toast.makeText(getApplicationContext(),"Login failed",Toast.LENGTH_LONG).show();
                         dialog.dismiss();
                     }
 
@@ -290,6 +290,7 @@ public class LoginActivity extends AppCompatActivity {
                             String curdate = formatter.format(date);
 
                             UserDB u = new UserDB(UID, Name, Email, password, Phone , 50, 0, location, curdate);
+                            u.setLocation(location);
 
                             pushToFirebase(UID,u);
 

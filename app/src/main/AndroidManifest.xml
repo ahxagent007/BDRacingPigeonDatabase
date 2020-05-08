@@ -12,11 +12,11 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".Activities.BuySell.LoginActivity"></activity>
-        <activity
-            android:name=".ui.login.LoginActivity"
-            android:label="@string/title_activity_login" />
-        <activity android:name=".Activities.BuySell.BuyAndSellActivity" />
+        <activity android:name=".Activities.BuySell.SupplementsActivity"></activity>
+        <activity android:name=".Activities.BuySell.SellPigeonActivity" />
+        <activity android:name=".Activities.BuySell.BuyPigeonActivity" />
+        <activity android:name=".Activities.BuySell.ProfileActivity" />
+        <activity android:name=".Activities.BuySell.LoginActivity" />
         <activity android:name=".Activities.AuctionSite" />
         <activity android:name=".Activities.WebViewActivity" />
         <activity android:name=".Activities.RacerClubsActivity" />
@@ -25,6 +25,9 @@
         <activity android:name=".Activities.TopFanciers" />
         <activity android:name=".Activities.TopPigeons" />
         <activity android:name=".Activities.AllPigeons" />
+
+        <activity android:name=".Activities.BuySell.BuyAndSellActivity"/>
+
         <activity android:name=".Activities.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
