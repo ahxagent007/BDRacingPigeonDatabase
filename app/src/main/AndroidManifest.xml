@@ -12,7 +12,11 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".Activities.BuyAndSellActivity"></activity>
+        <activity android:name=".Activities.BuySell.LoginActivity"></activity>
+        <activity
+            android:name=".ui.login.LoginActivity"
+            android:label="@string/title_activity_login" />
+        <activity android:name=".Activities.BuySell.BuyAndSellActivity" />
         <activity android:name=".Activities.AuctionSite" />
         <activity android:name=".Activities.WebViewActivity" />
         <activity android:name=".Activities.RacerClubsActivity" />
