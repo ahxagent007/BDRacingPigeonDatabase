@@ -185,6 +185,11 @@ public class SupplementsActivity extends AppCompatActivity {
         // Add the buttons
         builder.setPositiveButton("Call", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int id) {
+
+                if(number == null){
+                    Toast.makeText(getApplicationContext(),"No Number found!", Toast.LENGTH_SHORT).show();
+                    return;
+                }
                 // User clicked OK button
 
                 Intent intent = new Intent(Intent.ACTION_CALL);
@@ -215,6 +220,10 @@ public class SupplementsActivity extends AppCompatActivity {
         });
         builder.setNegativeButton("Website", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int id) {
+                if(Website == null){
+                    Toast.makeText(getApplicationContext(),"No Website found!", Toast.LENGTH_SHORT).show();
+                    return;
+                }
                 Intent i = new Intent(getApplicationContext(), WebViewActivity.class);
                 i.putExtra("WEBSITE", Website);
                 startActivity(i);

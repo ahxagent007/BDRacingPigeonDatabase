@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:weightSum="10"
+    android:background="@drawable/preesed_lite_blue_rect"
+    android:layout_margin="10dp">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:minHeight="150dp"
+        android:layout_weight="4"
+        android:padding="10dp"
+        android:gravity="center">
+
+        <ImageView
+            android:id="@+id/IV_pigeonPic"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/secret_dev_logo"
+            android:layout_gravity="center"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="6"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="10dp"
+        android:layout_gravity="center">
+
+
+        <TextView
+            android:id="@+id/TV_Boosted"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#1900a8"
+            android:textStyle="bold"
+            android:textSize="15dp"
+            android:text="☆ Boosted ☆"
+            android:padding="2dp"
+            android:gravity="right"/>
+
+        <TextView
+            android:id="@+id/TV_ring"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#000000"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:text="BAN 20-2050494"
+            android:padding="2dp"/>
+
+        <TextView
+            android:id="@+id/TV_details"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#000000"
+            android:textSize="15dp"
+            android:text="T-Tonic 250ml best of best the bestT-Tonic 250ml best of best the bestT-Tonic 250ml best of best the best"
+            android:padding="2dp"/>
+
+        <TextView
+            android:id="@+id/TV_location"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#000000"
+            android:textSize="12dp"
+            android:text="Location: Azimpur"
+            android:padding="2dp"
+            android:gravity="right"/>
+
+        <TextView
+            android:id="@+id/TV_price"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#ab1a00"
+            android:textStyle="bold"
+            android:textSize="15dp"
+            android:text="Price : 5000"
+            android:padding="2dp"
+            android:fontFamily="monospace"
+            android:gravity="center"/>
+
+        <LinearLayout
+            android:id="@+id/LL_SellPigeonLL"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="3">
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="EDIT"
+                android:background="@drawable/pressed_btn_green"
+                android:layout_margin="2dp"
+                android:textColor="#FFFFFF"/>
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="SOLD"
+                android:background="@drawable/pressed_blue_btn"
+                android:layout_margin="2dp"
+                android:textColor="#FFFFFF"/>
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="BOOST"
+                android:background="@drawable/pressed_black"
+                android:layout_margin="2dp"
+                android:textColor="#FFFFFF"/>
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</LinearLayout>

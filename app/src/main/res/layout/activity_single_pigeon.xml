@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activities.BuySell.SinglePigeonActivity"
+    android:weightSum="10"
+    android:orientation="vertical"
+    android:background="@drawable/blue_bg">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="BD Racing Pigeon Database"
+            android:textColor="#FFFFFF"
+            android:textSize="30dp"
+            android:background="@drawable/bg_dark_blue"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:fontFamily="cursive"
+            />
+
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="9">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_margin="10dp"
+            android:paddingLeft="5dp">
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:textColor="#000000"
+                android:textSize="25dp"
+                android:text="## Pigeon Details ##"
+                android:padding="5dp"
+                android:textStyle="bold"/>
+
+            <ImageView
+                android:id="@+id/IV_image1"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:src="@drawable/secret_dev_logo" />
+
+            <TextView
+                android:id="@+id/TV_ringNo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textColor="#000000"
+                android:textSize="25dp"
+                android:text="BAN 12-156498787"
+                android:padding="5dp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/TV_father"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:textColor="#000000"
+                android:textSize="20dp"
+                android:text="Father : adsasdasdas"
+                android:padding="5dp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/TV_mother"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:textColor="#000000"
+                android:textSize="20dp"
+                android:text="Mother : adsasdasdas"
+                android:padding="5dp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/TV_details"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:textColor="#000000"
+                android:textSize="20dp"
+                android:text="Details : adsasdasdas"
+                android:padding="5dp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/TV_price"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:textColor="#006400"
+                android:textSize="22dp"
+                android:text="Price : 5000"
+                android:padding="5dp"
+                android:textStyle="bold"
+                android:layout_gravity="center"/>
+
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:textColor="#0000A0"
+                android:textSize="25dp"
+                android:text="## Contact Details ##"
+                android:padding="5dp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/TV_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:textColor="#0000A0"
+                android:textSize="20dp"
+                android:text="Name : Azimpur"
+                android:padding="5dp"
+                android:textStyle="bold"/>
+            <TextView
+                android:id="@+id/TV_phone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:textColor="#0000A0"
+                android:textSize="20dp"
+                android:text="Phone : 01764009201"
+                android:padding="5dp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/TV_location"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:textColor="#0000A0"
+                android:textSize="20dp"
+                android:text="Location : Azimpur"
+                android:padding="5dp"
+                android:textStyle="bold"/>
+
+
+            <Button
+                android:id="@+id/btn_call"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#FFFFFF"
+                android:textSize="15dp"
+                android:text="Call Seller"
+                android:padding="5dp"
+                android:textStyle="bold"
+                android:layout_gravity="center"
+                android:background="@drawable/pressed_black"
+                android:layout_margin="10dp"/>
+
+
+            <ImageView
+                android:id="@+id/IV_image2"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:src="@drawable/secret_dev_logo"/>
+
+
+            <ImageView
+                android:id="@+id/IV_image3"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:src="@drawable/secret_dev_logo"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>
