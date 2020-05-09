@@ -32,7 +32,7 @@ import java.util.ArrayList;
 
 public class AuctionSite extends AppCompatActivity {
 
-    String TAG = "XINA";
+    String TAG = "XIAN";
 
     ProgressBar PB_loadingAuction;
     RecyclerView RV_auction;

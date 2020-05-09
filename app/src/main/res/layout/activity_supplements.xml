@@ -27,5 +27,21 @@
 
     </LinearLayout>
 
+    <ProgressBar
+        android:id="@+id/PB_loadingSup"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.5"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/RV_supplements"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="8.5"
+        android:padding="10dp">
+
+
+    </androidx.recyclerview.widget.RecyclerView>
+
 
 </LinearLayout>
